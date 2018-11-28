@@ -1,0 +1,39 @@
+{
+  "name": "jwtexpresskong",
+  "version": "1.0.0",
+  "description": "User JWT authentication using Nodejs+Kong ApiGateWay",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nayan9229/JwtExpressKong.git"
+  },
+  "keywords": [
+    "Node",
+    "NodeJS",
+    "JWT",
+    "KONG",
+    "api-gateway"
+  ],
+  "author": "Nayan Mevada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nayan9229/JwtExpressKong/issues"
+  },
+  "homepage": "https://github.com/nayan9229/JwtExpressKong#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.4.0",
+    "sqlite3": "^4.0.2",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  }
+}

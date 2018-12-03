@@ -1,0 +1,33 @@
+version: '3'
+services:
+  apis001:
+    build: .
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - "1212:8080"
+    command: npm run pro
+    
+  apis002:
+    build: .
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - "1213:8080"
+    command: npm run pro
+
+  apis003:
+    build: .
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - "1214:8080"
+    command: npm run pro
+  
+  apis004:
+    build: .
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - "1215:8080"
+    command: npm run pro

@@ -27,7 +27,7 @@ async function test() {
     for (const val of deummayArray) {
         let request = await testLoad();
         console.log(request);
-        let wait = await dummywait(200);
+        let wait = await dummywait(500);
     }
 }
 test();
@@ -42,7 +42,7 @@ function testLoad() {
             "port": "8000",
             "path": "/balance/user/list",
             "headers": {
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJkZW1vMDAxIiwiaWF0IjoxNTQzNTcwMzEyLCJleHAiOjE1NDM2NTY3MTIsImlzcyI6IkRDVDZJRWp4T0NGb1BaR054SGVKaEIwRW5jeUpBUnNGIn0.IIeNBUoxnt6u5Z9tDQAc7e3wCmJSa760G6D1G4H2xyk"
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJkZW1vMDAxIiwiaWF0IjoxNTQzODI4NzA5LCJleHAiOjE1NDQ0MzM1MDksImlzcyI6IkRDVDZJRWp4T0NGb1BaR054SGVKaEIwRW5jeUpBUnNGIn0.ikFdbtbrZFYcdLKIGPlkuNkFNan5L9n_ripeqQZLj1g"
             }
         };
 

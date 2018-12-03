@@ -20,5 +20,15 @@ module.exports = {
                 db.close((err) => { if (err) { console.error(err.message); } console.log('Close the database connection.'); });
             });
         });
+    },
+    executeAsync: function(query) {
+        return new Promise((resolve, reject) => {
+            const db = new sqlite3.Database(dbPath);
+            db.all(query, function(err, data) {
+                if(err) return reject(err.message);
+                else resolve(data);
+                db.close((err) => { if (err) return reject(err.message); });
+            });
+        });
     }
 };

@@ -25,7 +25,8 @@ exports.login = function(req, res) {
         // if user is found and password is valid
         // create a token
         var token = jwt.sign({ id: user.Id, username: user.username }, secret, {
-            expiresIn: 86400 // expires in 24 hours
+            expiresIn: 86400 * 7, // expires in 7 days hours
+            issuer:'DCT6IEjxOCFoPZGNxHeJhB0EncyJARsF' //iss from kong
         });
         // return the information including token as JSON
         res.status(200).send({ auth: true, token: token });
@@ -62,9 +63,14 @@ exports.register = function(req, res) {
             db.run(queryInsert, function(err) {
                 if (err) return res.status(500).send({ error: 1, message: "There was a problem registering the user`." });
                 console.log(`A row has been inserted with rowid ${this.lastID}`);
+                
+                //Replace this block with Kong JWT method.
                 var token = jwt.sign({ id: this.lastID, username: username }, secret, {
-                    expiresIn: 86400 * 7 // expires in 7 days
+                    expiresIn: 86400 * 7 , // expires in 7 days
+                    issuer:'DCT6IEjxOCFoPZGNxHeJhB0EncyJARsF' //iss from kong
                 });
+                
+                
                 res.status(200).send({ auth: true, token: token, error: 0 });
                 database.closePool(db);
             });
